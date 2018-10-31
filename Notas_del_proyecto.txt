@@ -1,0 +1,190 @@
+Filas 
+1
+2
+3
+4
+5
+Columnas:
+0123456789
+
+***************************
+NoPersonas
+Butacas
+User_id
+
+ <div class="form-group{{ $errors->has('Butacas') ? ' has-error' : '' }}">
+                            <label for="Butacas" class="col-md-4 control-label">Butacas tomadas</label>
+
+                            <div class="col-md-6">
+                                <input id="Butacas" type="text" class="form-control" name="Butacas" value="{{ old('Butacas') }}" required>
+
+                                @if ($errors->has('Butacas'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('Butacas') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+
+
+        <tr>
+                            <th scope="row">A</th>
+                            <td><input class="form-check-input" type="checkbox" value="1A" id="Check1">1A</td>
+                            <td><input class="form-check-input" type="checkbox" value="2A" id="Check2">2A</td>
+                            <td><input class="form-check-input" type="checkbox" value="3A" id="Check3">3A</td>
+                            <td><input class="form-check-input" type="checkbox" value="4A" id="Check4">4A</td>
+                            <td><input class="form-check-input" type="checkbox" value="5A" id="Check5">5A</td>
+                            <td><input class="form-check-input" type="checkbox" value="6A" id="Check6">6A</td>
+                            <td><input class="form-check-input" type="checkbox" value="7A" id="Check7">7A</td>
+                            <td><input class="form-check-input" type="checkbox" value="8A" id="Check8">8A</td>
+                            <td><input class="form-check-input" type="checkbox" value="9A" id="Check9">9A</td>
+                            <td><input class="form-check-input" type="checkbox" value="10A" id="Check10">10A</td>
+                            </tr>
+                            <tr>
+                            <th scope="row">B</th>
+                            <td><input class="form-check-input" type="checkbox" value="1B" id="Check1">1B</td>
+                            <td><input class="form-check-input" type="checkbox" value="2B" id="Check2">2B</td>
+                            <td><input class="form-check-input" type="checkbox" value="3B" id="Check3">3B</td>
+                            <td><input class="form-check-input" type="checkbox" value="4B" id="Check4">4B</td>
+                            <td><input class="form-check-input" type="checkbox" value="5B" id="Check5">5B</td>
+                            <td><input class="form-check-input" type="checkbox" value="6B" id="Check6">6B</td>
+                            <td><input class="form-check-input" type="checkbox" value="7B" id="Check7">7B</td>
+                            <td><input class="form-check-input" type="checkbox" value="8B" id="Check8">8B</td>
+                            <td><input class="form-check-input" type="checkbox" value="9B" id="Check9">9B</td>
+                            <td><input class="form-check-input" type="checkbox" value="10B" id="Check10">10B</td>
+                            </tr>
+                            <tr>
+                            <th scope="row">C</th>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>4</td>
+                            <td>5</td>
+                            <td>6</td>
+                            <td>7</td>
+                            <td>8</td>
+                            <td>9</td>
+                            <td>10</td>
+                            </tr>
+                            <th scope="row">D</th>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>4</td>
+                            <td>5</td>
+                            <td>6</td>
+                            <td>7</td>
+                            <td>8</td>
+                            <td>9</td>
+                            <td>10</td>
+                            </tr>
+                            <tr>
+                            <th scope="row">E</th>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>4</td>
+                            <td>5</td>
+                            <td>6</td>
+                            <td>7</td>
+                            <td>8</td>
+                            <td>9</td>
+                            <td>10</td>
+                            </tr>
+checked
+
+<input type="checkbox" name="test" @if(old('test') !== NULL || old('test check') === NULL){{ 'checked' }}@endif>
+
+
+
+<div class="form-group{{ $errors->has('Butacas') ? ' has-error' : '' }}">
+                            <label for="Butacas" class="col-md-4 control-label">Butacas tomadas</label>
+
+                            <div class="col-md-6">
+                                <input id="Butacas" type="text" class="form-control" name="Butacas" value="{{ old('Butacas') }}" required>
+
+                                @if ($errors->has('Butacas'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('Butacas') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+
+
+
+//dd($reserva);
+        //return view('reserva.show', compact('reserva'));
+        //dd($reserva);
+        //return view('reserva.show', compact('reserva'));
+        // $product ="";
+        // $chks = array('multicolor','resizable','showRuler','namesNumbersEnabled');
+        // foreach ($chks as $chk) {
+        //    $product->setAttribute($chk, (Input::has($chk)) ? true : false);
+        // }
+        // dd($product);
+        //$array2 = array(6, 7, 8, 9, 10, 11, 12);
+        //$reserva = new Reserva;
+
+
+@foreach($reservas as $reserva)
+                            <tr>
+                                <th scope="row">{{ $reserva->id }}</th>
+                                <td>{{ $reserva->Names }}</td>
+                                <td>{{ $reserva->LastName }}</td>
+                                <td>{{ $reserva->NoPersonas }}</td>
+                            </tr>
+                            @endforeach
+
+<div class="row">
+                      @include('reserva.index')
+                    </div>
+
+{{ var_dump($reservas)}}
+
+
+href="{{ route('Reservas.edit',$reserva->id )}}"
+
+ @foreach($reservas as $res)
+                                <tr>
+                                    <th scope="row">{{ $res->id }}</th>
+                                    <td>{{ $res->Names }}</td>
+                                    <td>{{ $res->LastName }}</td>
+                                    <td>{{ $res->NoPersonas }}</td>
+                                </tr>
+                            @endforeach
+
+
+$allreservas
+
+@if (in_array($i."A", $allreservas->Butacas)) checked="checked" @endif
+
+@foreach ($allreservas as $reserva) {
+                                            $allreservas =  array_merge($allreservas ,unserialize($reserva->Butacas));
+                                    @endforeach
+
+
+
+
+            // var all = {!! json_encode($allreservas) !!};
+            // all.forEach(element => {
+            //     console.log(element.Butacas);
+            //     //console.log($("input[name='Butacas']").value);
+            //     //alert("selected "+ $("input[name='Butacas']"));
+					
+            // });
+
+            // todos=document.getElementsByTagName('input');
+              
+            //     for(x=0;x<todos.length;x++){                
+            //         //console.log("check: ",todos[x].value);
+            //         if(document.crea.elements[x].type == "checkbox")	
+            //             document.crea.elements[x].checked=1 
+            //             //@if (in_array($i."A", $allreservas->Butacas)) checked="checked" @endif
+            //     }
+            
+onclick="return confirm('Estas seguro?')"
+
+Jose => manda1978@hotmail.com => Jose123
